@@ -2,6 +2,7 @@ import { useRef, useEffect } from "react";
 import "./Map.css";
 
 const Map = (props) => {
+  // use mapbox go to hashnode
   const mapRef = useRef();
 
   const { center, zoom } = props;
