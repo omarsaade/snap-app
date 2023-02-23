@@ -9,10 +9,12 @@ export const useAuth = () => {
 
   const login = useCallback((uid, token, expirationDate) => {
     // REACT WILL BATCH ALL THE FOLLOWING SET STATE TOGETHER
+
     setToken(token);
     setUserId(uid);
 
     // STORE TOKEN IN LOCAL STORAGE
+
     // PASS EXISTING EXPIRATION DATE OR GENERATE A DATE OBJECT: NOW + 1 HOUR
     const tokenExpirationDate =
       expirationDate || new Date(new Date().getTime() + 1000 * 60 * 60);
