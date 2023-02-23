@@ -1,0 +1,44 @@
+.user-item {
+  min-width: 20rem;
+  transition: all 0.3s;
+}
+
+.user-item:hover {
+  box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.9);
+  transform: translateY(-1.2rem);
+}
+
+.user-item li {
+  width: 100%;
+
+  text-decoration: none;
+  background: #fff;
+}
+
+.user-item__image {
+  width: 6.4rem;
+  height: 6.4rem;
+}
+
+.user-item__info {
+  height: 11.2rem;
+  width: 100%;
+
+  text-align: center;
+}
+
+.user-item__info-name {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #333;
+
+  margin-bottom: 1.6rem;
+}
+
+.user-item__info-text {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #767676;
+
+  line-height: 1.6;
+}

@@ -1,0 +1,13 @@
+.snap-form {
+  list-style: none;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 64rem;
+}
+
+.no-snaps-found {
+  padding: 12.8rem;
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: #333;
+}
