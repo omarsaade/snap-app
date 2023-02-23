@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef, useEffect } from 'react';
+import { useState, useCallback, useRef, useEffect } from "react";
 
 export const useHttpClient = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -10,7 +10,7 @@ export const useHttpClient = () => {
   const activeHttpRequests = useRef([]);
 
   const sendRequest = useCallback(
-    async (url, method = 'GET', body = null, headers = {}) => {
+    async (url, method = "GET", body = null, headers = {}) => {
       setIsLoading(true);
 
       // AbortController:represents a CONTROLLER OBJECT that allows you to ABORT ONE OR MORE WEB REQUESTS as and when desired.
@@ -28,7 +28,7 @@ export const useHttpClient = () => {
 
         // HANDLING 404: NO ROUTE FOUND
         if (response.status === 404) {
-          throw new Error('Not found');
+          throw new Error("Not found");
         }
 
         const responseData = await response.json();
@@ -56,6 +56,7 @@ export const useHttpClient = () => {
 
   // const clearError = () => {
   //   setError(null);
+
   // };
 
   const clearError = useCallback(() => {
