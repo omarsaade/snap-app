@@ -1,11 +1,11 @@
-import { useState, useCallback } from 'react';
-import { useHistory } from 'react-router';
-import Button from '../FormElements/Button';
-import SearchBar from './SearchBar';
+import { useState, useCallback } from "react";
+import { useHistory } from "react-router";
+import Button from "../FormElements/Button";
+import SearchBar from "./SearchBar";
 
-import { VALIDATOR_REQUIRE } from '../../util/validators';
+import { VALIDATOR_REQUIRE } from "../../util/validators";
 
-import './Hero.css';
+import "./Hero.css";
 
 const Hero = () => {
   const [searchState, setSearchState] = useState();
@@ -25,26 +25,26 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className='center-text small-gap center-flex-column section-hero'>
-      <h1 className='hero-heading'>Snap</h1>
-      <p className='hero-description'>
+    <section className="center-text small-gap center-flex-column section-hero">
+      <h1 className="hero-heading">Snap</h1>
+      <p className="hero-description">
         A photo sharing platform for people who love architecture.
       </p>
-      <div className='center-flex-column tiny-gap hero-cta'>
-        <div className='center-flex-row tiny-gap hero-cta--actions'>
-          <Button to='/random' type='button' size='medium' inverse primary>
+      <div className="center-flex-column tiny-gap hero-cta">
+        <div className="center-flex-row tiny-gap hero-cta--actions">
+          <Button to="/random" type="button" size="medium" inverse primary>
             Random
           </Button>
           <div>
             <form onSubmit={searchSubmitHandler}>
               <SearchBar
                 validators={[VALIDATOR_REQUIRE()]}
-                errorText='Please enter valid search.'
+                errorText="Please enter valid search."
                 onSearch={searchStateHandler}
               />
             </form>
           </div>
-          <p className='hero-cta--text'>
+          <p className="hero-cta--text">
             <span>Suggested</span>: museum, plaza, palace
           </p>
         </div>

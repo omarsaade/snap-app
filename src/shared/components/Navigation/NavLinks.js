@@ -1,19 +1,19 @@
-import { useContext } from 'react';
-import { NavLink } from 'react-router-dom';
-import { NavHashLink } from 'react-router-hash-link';
+import { useContext } from "react";
+import { NavLink } from "react-router-dom";
+import { NavHashLink } from "react-router-hash-link";
 
-import Button from '../FormElements/Button';
-import { AuthContext } from '../../context/auth-context';
+import Button from "../FormElements/Button";
+import { AuthContext } from "../../context/auth-context";
 
-import './NavLinks.css';
+import "./NavLinks.css";
 
 const NavLinks = () => {
   const auth = useContext(AuthContext);
 
   return (
-    <ul className='center-flex-row medium-gap nav-links'>
+    <ul className="center-flex-row medium-gap nav-links">
       <li>
-        <NavHashLink smooth to='/#users' exact>
+        <NavHashLink smooth to="/#users" exact>
           All Users
         </NavHashLink>
       </li>
@@ -24,21 +24,21 @@ const NavLinks = () => {
       )}
       {auth.isLoggedIn && (
         <li>
-          <NavLink to='/snaps/new'>Add Snap</NavLink>
+          <NavLink to="/snaps/new">Add Snap</NavLink>
         </li>
       )}
       {!auth.isLoggedIn && (
         <li>
           {/* <NavLink to='/auth'>Get Started</NavLink>
            */}
-          <Button to='/auth' type='button' size='medium' secondary>
+          <Button to="/auth" type="button" size="medium" secondary>
             Get Started
           </Button>
         </li>
       )}
       {auth.isLoggedIn && (
         <li>
-          <Button type='button' size='medium' secondary onClick={auth.logout}>
+          <Button type="button" size="medium" secondary onClick={auth.logout}>
             Logout
           </Button>
         </li>

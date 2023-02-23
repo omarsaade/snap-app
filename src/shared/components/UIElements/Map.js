@@ -1,5 +1,5 @@
-import { useRef, useEffect } from 'react';
-import './Map.css';
+import { useRef, useEffect } from "react";
+import "./Map.css";
 
 const Map = (props) => {
   const mapRef = useRef();
