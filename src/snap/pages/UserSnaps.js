@@ -21,7 +21,7 @@ const UserSnaps = () => {
     const fetchUser = async () => {
       try {
         const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/users/${userId}`
+          `https://snap-app-omarsaade.onrender.com/api/users/${userId}`
         );
         setLoadedUser(responseData.user);
       } catch (err) {}
@@ -33,7 +33,7 @@ const UserSnaps = () => {
     const fetchSnaps = async () => {
       try {
         const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/snaps/user/${userId}`
+          `https://snap-app-omarsaade.onrender.com/api/snaps/user/${userId}`
         );
         setLoadedSnaps(responseData.snaps);
       } catch (err) {}

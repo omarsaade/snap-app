@@ -1,13 +1,13 @@
-import { useState, useEffect, useCallback } from 'react';
-import { useParams, useHistory } from 'react-router';
+import { useState, useEffect, useCallback } from "react";
+import { useParams, useHistory } from "react-router";
 
-import SearchBar from '../../shared/components/Hero/SearchBar';
-import { VALIDATOR_REQUIRE } from '../../shared/util/validators';
-import { useHttpClient } from '../../shared/hooks/http-hook';
-import SnapList from '../components/SnapList';
-import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
+import SearchBar from "../../shared/components/Hero/SearchBar";
+import { VALIDATOR_REQUIRE } from "../../shared/util/validators";
+import { useHttpClient } from "../../shared/hooks/http-hook";
+import SnapList from "../components/SnapList";
+import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
 
-import './SearchSnaps.css';
+import "./SearchSnaps.css";
 
 const SearchSnaps = () => {
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
@@ -26,7 +26,7 @@ const SearchSnaps = () => {
     const fetchSnaps = async (keyword) => {
       try {
         const responseData = await sendRequest(
-          `${process.env.REACT_APP_BACKEND_URL}/snaps/search/${keyword}`
+          `https://snap-app-omarsaade.onrender.com/api/snaps/search/${keyword}`
         );
         setLoadedSnaps(responseData.snaps);
       } catch (err) {}
@@ -52,12 +52,12 @@ const SearchSnaps = () => {
   }, []);
 
   return (
-    <div className='center-flex-column'>
-      <div className='center-text search-hero center-flex-column extra-small-gap'>
-        <p className='search-hero-text'>
+    <div className="center-flex-column">
+      <div className="center-text search-hero center-flex-column extra-small-gap">
+        <p className="search-hero-text">
           Here is your searching result for
           {!isLoading && (
-            <span className='search-hero-keyword'>{` ${
+            <span className="search-hero-keyword">{` ${
               keyword || searchState
             }`}</span>
           )}
@@ -66,7 +66,7 @@ const SearchSnaps = () => {
           <form onSubmit={searchSubmitHandler}>
             <SearchBar
               validators={[VALIDATOR_REQUIRE()]}
-              errorText='Please enter valid search.'
+              errorText="Please enter valid search."
               onSearch={searchStateHandler}
             />
           </form>
@@ -74,13 +74,13 @@ const SearchSnaps = () => {
       </div>
 
       {isLoading && (
-        <div className='center-text'>
+        <div className="center-text">
           <LoadingSpinner />
         </div>
       )}
 
       {!isLoading && error && (
-        <p className='center-text no-data-found'>
+        <p className="center-text no-data-found">
           Could not find any snap. Please try again.
         </p>
       )}

@@ -10,7 +10,7 @@ const UserItem = (props) => {
       <li className="center-flex-column medium-gap">
         <div className="user-item__image">
           <Avatar
-            image={`${process.env.REACT_APP_ASSET_URL}/${props.image}`}
+            image={`https://snap-app-omarsaade.onrender.com/${props.image}`}
             alt={props.name}
           />
         </div>

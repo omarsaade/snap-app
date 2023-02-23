@@ -84,7 +84,7 @@ const App = () => {
       </Switch>
     );
   }
-
+  console.log(process.env.REACT_APP_BACKEND_URL);
   return (
     <AuthContext.Provider
       value={{
@@ -95,8 +95,7 @@ const App = () => {
         logout: logout,
       }}
     >
-      {/* <Router basename="/snap-app"> */}
-      <Router>
+      <Router basename="/snap-app">
         <MainNavigation />
         <main>
           <Suspense
@@ -116,59 +115,3 @@ const App = () => {
 };
 
 export default App;
-
-/*
-
-without lazy code
-import React from "react";
-import { Route, Routes } from "react-router-dom";
-import Users from "./user/pages/Users";
-import NewPlace from "./places/pages/NewPlace";
-import UserPlaces from "./places/pages/UserPlaces";
-import UpdatePlace from "./places/pages/UpdatePlace";
-import MainNavigation from "./shared/components/Navigation/MainNavigation";
-import Auth from "./user/pages/Auth";
-import { AuthContext } from "./shared/context/auth-context";
-import { useAuth } from "./shared/hooks/auth-hook";
-const App = () => {
-  const { token, login, logout, userId } = useAuth();
-  let routes;
-  if (token) {
-    routes = (
-      <>
-        <Route path="/" element={<Users />} />
-        <Route path="/:userId/places" element={<UserPlaces />} />
-        <Route path="/places/new" element={<NewPlace />} />
-        <Route path="/places/:placeId" element={<UpdatePlace />} />
-      </>
-    );
-  } else {
-    routes = (
-      <>
-        <Route path="/:userId/places" element={<UserPlaces />} />
-        <Route path="/auth" element={<Auth />} />
-        <Route path="/" element={<Users />} />
-      </>
-    );
-  }
-  return (
-    <AuthContext.Provider
-      value={{
-        isLoggedIn: !!token,
-        token: token,
-        userId: userId,
-        login: login,
-        logout: logout,
-      }}
-    >
-      <MainNavigation />
-      <main>
-        <Routes>{routes}</Routes>
-      </main>
-    </AuthContext.Provider>
-  );
-};
-export default App;
-
-
-*/
