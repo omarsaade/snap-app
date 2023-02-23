@@ -1,22 +1,22 @@
-import { Fragment, useState, useContext } from 'react';
+import { Fragment, useState, useContext } from "react";
 
-import Card from '../../shared/components/UIElements/Card';
-import Input from '../../shared/components/FormElements/Input';
-import Button from '../../shared/components/FormElements/Button';
-import ErrorModal from '../../shared/components/UIElements/ErrorModal';
-import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
-import ImageUpload from '../../shared/components/FormElements/ImageUpload';
+import Card from "../../shared/components/UIElements/Card";
+import Input from "../../shared/components/FormElements/Input";
+import Button from "../../shared/components/FormElements/Button";
+import ErrorModal from "../../shared/components/UIElements/ErrorModal";
+import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
+import ImageUpload from "../../shared/components/FormElements/ImageUpload";
 
-import { useForm } from '../../shared/hooks/form-hook';
-import { useHttpClient } from '../../shared/hooks/http-hook';
-import { AuthContext } from '../../shared/context/auth-context';
+import { useForm } from "../../shared/hooks/form-hook";
+import { useHttpClient } from "../../shared/hooks/http-hook";
+import { AuthContext } from "../../shared/context/auth-context";
 
-import './Auth.css';
+import "./Auth.css";
 import {
   VALIDATOR_EMAIL,
   VALIDATOR_MINLENGTH,
   VALIDATOR_REQUIRE,
-} from '../../shared/util/validators';
+} from "../../shared/util/validators";
 
 const Auth = () => {
   const auth = useContext(AuthContext);
@@ -29,11 +29,11 @@ const Auth = () => {
   const [formState, inputHandler, setFormData] = useForm(
     {
       email: {
-        value: '',
+        value: "",
         isValid: false,
       },
       password: {
-        value: '',
+        value: "",
         isValid: false,
       },
     },
@@ -59,7 +59,7 @@ const Auth = () => {
         {
           ...formState.inputs,
           name: {
-            value: '',
+            value: "",
             isValid: false,
           },
           image: {
@@ -67,7 +67,7 @@ const Auth = () => {
             isValid: false,
           },
           motto: {
-            value: '',
+            value: "",
             isValid: false,
           },
         },
@@ -85,13 +85,13 @@ const Auth = () => {
       try {
         const responseData = await sendRequest(
           `${process.env.REACT_APP_BACKEND_URL}/users/login`,
-          'POST',
+          "POST",
           JSON.stringify({
             email: formState.inputs.email.value,
             password: formState.inputs.password.value,
           }),
           {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           }
         );
 
@@ -105,15 +105,15 @@ const Auth = () => {
       try {
         // REQUEST BODY: FORMDATA
         const formData = new FormData();
-        formData.append('email', formState.inputs.email.value);
-        formData.append('name', formState.inputs.name.value);
-        formData.append('password', formState.inputs.password.value);
-        formData.append('motto', formState.inputs.motto.value);
-        formData.append('image', formState.inputs.image.value);
+        formData.append("email", formState.inputs.email.value);
+        formData.append("name", formState.inputs.name.value);
+        formData.append("password", formState.inputs.password.value);
+        formData.append("motto", formState.inputs.motto.value);
+        formData.append("image", formState.inputs.image.value);
 
         const responseData = await sendRequest(
           `${process.env.REACT_APP_BACKEND_URL}/users/signup`,
-          'POST',
+          "POST",
           formData
         );
 
@@ -126,76 +126,76 @@ const Auth = () => {
   return (
     <Fragment>
       <ErrorModal error={error} onClear={clearError} />
-      <Card className='authentication-form'>
+      <Card className="authentication-form">
         {isLoading && <LoadingSpinner asOverlay />}
-        <h2 className='authentication-form-header'>Login Required</h2>
+        <h2 className="authentication-form-header">Login Required</h2>
         <form onSubmit={authSubmitHandler}>
           {!isLoginMode && (
             <ImageUpload
-              id='image'
+              id="image"
               center
-              errorText=''
+              errorText=""
               onInput={inputHandler}
             />
           )}
           {!isLoginMode && (
             <Input
-              element='input'
-              id='name'
-              type='text'
-              label='Name'
+              element="input"
+              id="name"
+              type="text"
+              label="Name"
               validators={[VALIDATOR_REQUIRE()]}
-              errorText='Please enter a name.'
+              errorText="Please enter a name."
               onInput={inputHandler}
             />
           )}
           {!isLoginMode && (
             <Input
-              element='input'
-              id='motto'
-              type='motto'
-              label='Motto'
+              element="input"
+              id="motto"
+              type="motto"
+              label="Motto"
               validators={[VALIDATOR_REQUIRE()]}
-              errorText='Please enter a motto.'
+              errorText="Please enter a motto."
               onInput={inputHandler}
             />
           )}
           {!isLoginMode && (
-            <p className='authentication-form-text'>
+            <p className="authentication-form-text">
               Example: Happiness is Travelling
             </p>
           )}
           <Input
-            element='input'
-            id='email'
-            type='email'
-            label='Email'
+            element="input"
+            id="email"
+            type="email"
+            label="Email"
             validators={[VALIDATOR_EMAIL()]}
-            errorText='Please enter a valid email address.'
+            errorText="Please enter a valid email address."
             onInput={inputHandler}
           />
           {!isLoginMode && (
-            <p className='authentication-form-text'>
+            <p className="authentication-form-text">
               Example: John@company.com
             </p>
           )}
           <Input
-            element='input'
-            id='password'
-            type='password'
-            label='Password'
+            element="input"
+            id="password"
+            type="password"
+            label="Password"
             validators={[VALIDATOR_MINLENGTH(8)]}
-            errorText='Please enter a valid password, at least 8 characters.'
-            placeholder={isLoginMode ? '' : 'Must be at least 8 characters'}
+            errorText="Please enter a valid password, at least 8 characters."
+            placeholder={isLoginMode ? "" : "Must be at least 8 characters"}
             onInput={inputHandler}
           />
-          <div className='authentication-form-actions'>
-            <Button type='submit' secondary disabled={!formState.isValid}>
-              {isLoginMode ? 'Login' : 'Signup'}
+          <div className="authentication-form-actions">
+            <Button type="submit" secondary disabled={!formState.isValid}>
+              {isLoginMode ? "Login" : "Signup"}
             </Button>
             {isLoginMode ? (
               <Button
-                type='button'
+                type="button"
                 onClick={switchModeHandler}
                 inverse
                 secondary
@@ -204,7 +204,7 @@ const Auth = () => {
               </Button>
             ) : (
               <Button
-                type='button'
+                type="button"
                 onClick={switchModeHandler}
                 inverse
                 secondary

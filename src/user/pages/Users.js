@@ -1,12 +1,12 @@
-import { Fragment, useState, useEffect } from 'react';
-import Hero from '../../shared/components/Hero/Hero';
-import Features from '../../shared/components/Features/Features';
-import UsersList from '../components/UsersList';
-import CallToAction from '../../shared/components/CallToAction/CallToAction';
-import ErrorModal from '../../shared/components/UIElements/ErrorModal';
-import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
+import { Fragment, useState, useEffect } from "react";
+import Hero from "../../shared/components/Hero/Hero";
+import Features from "../../shared/components/Features/Features";
+import UsersList from "../components/UsersList";
+import CallToAction from "../../shared/components/CallToAction/CallToAction";
+import ErrorModal from "../../shared/components/UIElements/ErrorModal";
+import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
 
-import { useHttpClient } from '../../shared/hooks/http-hook';
+import { useHttpClient } from "../../shared/hooks/http-hook";
 
 const Users = () => {
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
@@ -31,7 +31,7 @@ const Users = () => {
       <Hero />
       <Features />
       {isLoading && (
-        <div className='center-flex-row'>
+        <div className="center-flex-row">
           <LoadingSpinner />
         </div>
       )}
