@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect } from "react";
 
 let logoutTimer;
 
@@ -20,11 +20,11 @@ export const useAuth = () => {
     setTokenExpirationDate(tokenExpirationDate);
 
     localStorage.setItem(
-      'userData',
+      "userData",
       JSON.stringify({
         userId: uid,
         token: token,
-        // ISO STRING CAN BE CONVERTED BACK TO A DATE OBJECT
+        // iso string can be converted back to date objkectt
         expiration: tokenExpirationDate.toISOString(),
       })
     );
@@ -33,11 +33,11 @@ export const useAuth = () => {
   const logout = useCallback(() => {
     setToken(null);
     setUserId(null);
-    // REMORE USERDATA STORED LOCALLY
-    localStorage.removeItem('userData');
+    // remove userdata stored here
+    localStorage.removeItem("userData");
   }, []);
 
-  // IMPLEMENT AUTO-LOGOUT
+  // implement auto-logout here
   useEffect(() => {
     if (token && tokenExpirationDate) {
       const remainingTime =
@@ -52,9 +52,9 @@ export const useAuth = () => {
     }
   }, [token, logout, tokenExpirationDate]);
 
-  // IMPLEMENT AUTO-LOGIN
+  // impelment auto login here
   useEffect(() => {
-    const storedData = JSON.parse(localStorage.getItem('userData'));
+    const storedData = JSON.parse(localStorage.getItem("userData"));
 
     if (
       storedData &&
