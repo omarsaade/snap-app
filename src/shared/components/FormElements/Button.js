@@ -19,6 +19,23 @@ const Button = (props) => {
       </a>
     );
   }
+
+  /*
+
+<a
+        className={`button button--${props.size || "default"} ${
+          props.inverse && "button--inverse"
+        } ${props.danger && "button--danger"} ${
+          props.whiteBg && "button--white-bg"
+        } ${props.primary && "button--primary"} ${
+          props.secondary && "button--secondary"
+        }`}
+        href={props.href}
+      >
+        {props.children}
+      </a>
+
+  */
   if (props.to) {
     return (
       <Link
