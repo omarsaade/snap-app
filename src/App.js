@@ -33,7 +33,7 @@ const UpdateSnap = React.lazy(() => import("./snap/pages/UpdateSnap"));
 
 const App = () => {
   const { token, login, logout, userId } = useAuth();
-
+  //  here we can use use react router v6
   let routes;
 
   if (token) {

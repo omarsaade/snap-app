@@ -1,13 +1,13 @@
-import { Fragment, useState, useEffect } from 'react';
-import { useParams } from 'react-router';
+import { Fragment, useState, useEffect } from "react";
+import { useParams } from "react-router";
 
-import { useHttpClient } from '../../shared/hooks/http-hook';
-import SnapList from '../components/SnapList';
-import ErrorModal from '../../shared/components/UIElements/ErrorModal';
-import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
-import Avatar from '../../shared/components/UIElements/Avatar';
+import { useHttpClient } from "../../shared/hooks/http-hook";
+import SnapList from "../components/SnapList";
+import ErrorModal from "../../shared/components/UIElements/ErrorModal";
+import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
+import Avatar from "../../shared/components/UIElements/Avatar";
 
-import './UserSnaps.css';
+import "./UserSnaps.css";
 
 const UserSnaps = () => {
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
@@ -51,19 +51,19 @@ const UserSnaps = () => {
     <Fragment>
       <ErrorModal error={error} onClear={clearError} />
       {isLoading && (
-        <div className='center-text'>
+        <div className="center-text">
           <LoadingSpinner />
         </div>
       )}
       {!isLoading && loadedUser && (
-        <div className='user-info center-flex-column extra-small-gap'>
-          <div className='user-info__image'>
+        <div className="user-info center-flex-column extra-small-gap">
+          <div className="user-info__image">
             <Avatar
               image={`${process.env.REACT_APP_ASSET_URL}/${loadedUser.image}`}
             />
           </div>
-          <p className='user-info__name'>{loadedUser.name}</p>
-          <p className='user-info__text'>{loadedUser.motto}</p>
+          <p className="user-info__name">{loadedUser.name}</p>
+          <p className="user-info__text">{loadedUser.motto}</p>
         </div>
       )}
       {!isLoading && loadedSnaps && (
