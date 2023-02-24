@@ -22,10 +22,8 @@ const Auth = () => {
   const auth = useContext(AuthContext);
   const [isLoginMode, setIsLoginMode] = useState(true);
 
-  // ERROR HANDLING: useHttpClient() custom hook
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
 
-  // FORM STATES
   const [formState, inputHandler, setFormData] = useForm(
     {
       email: {
@@ -41,7 +39,6 @@ const Auth = () => {
   );
 
   const switchModeHandler = () => {
-    // SIGNUP --> LOGIN
     if (!isLoginMode) {
       setFormData(
         {
@@ -84,7 +81,7 @@ const Auth = () => {
     if (isLoginMode) {
       try {
         const responseData = await sendRequest(
-          `https://snap-app-omarsaade.onrender.com/api/users/login`,
+          `${process.env.REACT_APP_BACKEND_URL}/users/login`,
           "POST",
           JSON.stringify({
             email: formState.inputs.email.value,
@@ -95,15 +92,12 @@ const Auth = () => {
           }
         );
 
-        // SET LOGGED IN & ASSIGN USER ID TO AUTH CONTEXT USERID
         auth.login(responseData.userId, responseData.token);
       } catch (err) {}
     }
 
-    // SIGN UP
     if (!isLoginMode) {
       try {
-        // REQUEST BODY: FORMDATA
         const formData = new FormData();
         formData.append("email", formState.inputs.email.value);
         formData.append("name", formState.inputs.name.value);
@@ -112,12 +106,11 @@ const Auth = () => {
         formData.append("image", formState.inputs.image.value);
 
         const responseData = await sendRequest(
-          `https://snap-app-omarsaade.onrender.com/api/users/signup`,
+          `${process.env.REACT_APP_BACKEND_URL}/users/signup`,
           "POST",
           formData
         );
 
-        // SET LOGGED IN & ASSIGN USER ID TO AUTH CONTEXT USERID
         auth.login(responseData.userId, responseData.token);
       } catch (err) {}
     }
@@ -149,17 +142,7 @@ const Auth = () => {
               onInput={inputHandler}
             />
           )}
-          {!isLoginMode && (
-            <Input
-              element="input"
-              id="motto"
-              type="motto"
-              label="Motto"
-              validators={[VALIDATOR_REQUIRE()]}
-              errorText="Please enter a motto."
-              onInput={inputHandler}
-            />
-          )}
+
           {!isLoginMode && (
             <p className="authentication-form-text">
               Example: Happiness is Travelling

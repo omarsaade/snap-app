@@ -9,7 +9,7 @@ const SnapList = (props) => {
     return (
       <div className="center-flex-column medium-gap no-data-found">
         <p>No snaps found. Maybe create one?</p>
-        <Button to="/snaps/new" secondary>
+        <Button to="/places/new" secondary>
           Create Snap
         </Button>
       </div>

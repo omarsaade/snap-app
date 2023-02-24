@@ -1,10 +1,8 @@
-.firstsection {
+.CTA-section {
   padding: 6.4rem 8rem;
 }
 
-
-/* text */
-.firstsectiontext {
+.CTA-section--text {
   font-size: 1.8rem;
   font-weight: 500;
   color: #333;

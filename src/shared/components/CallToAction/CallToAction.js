@@ -1,10 +1,9 @@
-import { useContext } from "react";
+import { useContext } from 'react';
 
-import Button from "../FormElements/Button";
+import Button from '../FormElements/Button';
+import { AuthContext } from '../../context/auth-context';
 
-import { AuthContext } from "../../context/auth-context";
-
-import "./CallToAction.css";
+import './CallToAction.css';
 
 const CallToAction = () => {
   const auth = useContext(AuthContext);
@@ -14,9 +13,9 @@ const CallToAction = () => {
   }
 
   return (
-    <div className="firstsection center-flex-column extra-small-gap">
-      <p className="firstsectiontext">Join us. Start your journey here.</p>
-      <Button to="/auth" type="button" size="medium" primary inverse>
+    <div className='CTA-section center-flex-column extra-small-gap'>
+      <p className='CTA-section--text'>Join us. Start your journey here.</p>
+      <Button to='/auth' type='button' size='medium' primary inverse>
         Get Started
       </Button>
     </div>

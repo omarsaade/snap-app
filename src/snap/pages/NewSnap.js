@@ -43,30 +43,25 @@ const NewSnap = () => {
     false
   );
 
-  // REDIRECT USER TO A DIFFERENT PAGE
   const history = useHistory();
 
-  // SUBMITTING FORM
   const snapSubmitHandler = async (event) => {
     event.preventDefault();
 
     try {
-      // REQUEST BODY: FORMDATA
       const formData = new FormData();
       formData.append("title", formState.inputs.title.value);
       formData.append("description", formState.inputs.description.value);
       formData.append("address", formState.inputs.address.value);
       formData.append("image", formState.inputs.image.value);
 
-      // POST REQUEST TO BACKEND
       await sendRequest(
-        `https://snap-app-omarsaade.onrender.com/api/snaps/`,
+        `${process.env.REACT_APP_BACKEND_URL}/places/`,
         "POST",
         formData,
         { Authorization: "Bearer " + auth.token }
       );
 
-      // REDIRECT USER TO A DIFFERENT PAGE
       history.push("/");
     } catch (err) {}
   };

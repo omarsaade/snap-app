@@ -8,14 +8,9 @@ export const useAuth = () => {
   const [userId, setUserId] = useState(null);
 
   const login = useCallback((uid, token, expirationDate) => {
-    // REACT WILL BATCH ALL THE FOLLOWING SET STATE TOGETHER
-
     setToken(token);
     setUserId(uid);
 
-    // STORE TOKEN IN LOCAL STORAGE
-
-    // PASS EXISTING EXPIRATION DATE OR GENERATE A DATE OBJECT: NOW + 1 HOUR
     const tokenExpirationDate =
       expirationDate || new Date(new Date().getTime() + 1000 * 60 * 60);
 
@@ -26,7 +21,7 @@ export const useAuth = () => {
       JSON.stringify({
         userId: uid,
         token: token,
-        // iso string can be converted back to date objkectt
+
         expiration: tokenExpirationDate.toISOString(),
       })
     );
@@ -35,11 +30,10 @@ export const useAuth = () => {
   const logout = useCallback(() => {
     setToken(null);
     setUserId(null);
-    // remove userdata stored here
+
     localStorage.removeItem("userData");
   }, []);
 
-  // implement auto-logout here
   useEffect(() => {
     if (token && tokenExpirationDate) {
       const remainingTime =
@@ -54,7 +48,6 @@ export const useAuth = () => {
     }
   }, [token, logout, tokenExpirationDate]);
 
-  // impelment auto login here
   useEffect(() => {
     const storedData = JSON.parse(localStorage.getItem("userData"));
 

@@ -1,14 +1,14 @@
-import Modal from "./Modal";
-import Button from "../FormElements/Button";
+import Modal from './Modal';
+import Button from '../FormElements/Button';
 
-import "./ErrorModal.css";
+import './ErrorModal.css';
 
 const ErrorModal = (props) => {
   return (
     <Modal
-      className="center-text"
+      className='center-text'
       onCancel={props.onClear}
-      header="An Error Occurred!"
+      header='An Error Occurred!'
       show={!!props.error}
       footer={
         <Button onClick={props.onClear} secondary>
@@ -16,7 +16,7 @@ const ErrorModal = (props) => {
         </Button>
       }
     >
-      <p className="error-modal-text">{props.error}</p>
+      <p className='error-modal-text'>{props.error}</p>
     </Modal>
   );
 };

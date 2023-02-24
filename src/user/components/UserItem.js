@@ -10,15 +10,14 @@ const UserItem = (props) => {
       <li className="center-flex-column medium-gap">
         <div className="user-item__image">
           <Avatar
-            image={`https://snap-app-omarsaade.onrender.com/${props.image}`}
+            image={`${process.env.REACT_APP_ASSET_URL}/${props.image}`}
             alt={props.name}
           />
         </div>
         <div className="user-item__info">
           <p className="user-item__info-name">{props.name}</p>
-          <p className="user-item__info-text">{props.motto}</p>
         </div>
-        <Button to={`/${props.id}/snaps`} secondary>
+        <Button to={`/${props.id}/places`} secondary>
           {props.snapCount} {props.snapCount === 1 ? "Snap" : "Snaps"}
         </Button>
       </li>

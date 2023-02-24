@@ -5,8 +5,6 @@ const formReducer = (state, action) => {
     case "INPUT_CHANGE":
       let formIsValid = true;
       for (const inputId in state.inputs) {
-        // FIXING 'NAME'/'IMAGE' COULD BE UNDEFINED WHEN IN LOG IN MODE
-
         if (!state.inputs[inputId]) {
           continue;
         }

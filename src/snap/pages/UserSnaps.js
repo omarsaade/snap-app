@@ -12,7 +12,7 @@ import "./UserSnaps.css";
 const UserSnaps = () => {
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
 
-  const [loadedSnaps, setLoadedSnaps] = useState();
+  const [loadedSnaps, setLoadedSnaps] = useState(false);
   const [loadedUser, setLoadedUser] = useState();
   const userId = useParams().userId;
 
@@ -21,7 +21,7 @@ const UserSnaps = () => {
     const fetchUser = async () => {
       try {
         const responseData = await sendRequest(
-          `https://snap-app-omarsaade.onrender.com/api/users/${userId}`
+          `${process.env.REACT_APP_BACKEND_URL}/users/${userId}`
         );
         setLoadedUser(responseData.user);
       } catch (err) {}
@@ -33,9 +33,9 @@ const UserSnaps = () => {
     const fetchSnaps = async () => {
       try {
         const responseData = await sendRequest(
-          `https://snap-app-omarsaade.onrender.com/api/snaps/user/${userId}`
+          `${process.env.REACT_APP_BACKEND_URL}/places/user/${userId}`
         );
-        setLoadedSnaps(responseData.snaps);
+        setLoadedSnaps(responseData.places);
       } catch (err) {}
     };
     fetchSnaps();
@@ -51,7 +51,7 @@ const UserSnaps = () => {
     <Fragment>
       <ErrorModal error={error} onClear={clearError} />
       {isLoading && (
-        <div className="center-text">
+        <div className="">
           <LoadingSpinner />
         </div>
       )}
@@ -69,7 +69,6 @@ const UserSnaps = () => {
       {!isLoading && loadedSnaps && (
         <SnapList items={loadedSnaps} onDeleteSnap={snapDeletedHandler} />
       )}
-      ;
     </Fragment>
   );
 };

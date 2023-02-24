@@ -40,17 +40,17 @@ const UpdateSnap = () => {
     const fetchSnap = async () => {
       try {
         const responseData = await sendRequest(
-          `https://snap-app-omarsaade.onrender.com/api/snaps/${snapId}`
+          `${process.env.REACT_APP_BACKEND_URL}/places/${snapId}`
         );
-        setLoadedSnap(responseData.snap);
+        setLoadedSnap(responseData.place);
         setFormData(
           {
             title: {
-              value: responseData.snap.title,
+              value: responseData.place.title,
               isValid: true,
             },
             description: {
-              value: responseData.snap.description,
+              value: responseData.place.description,
               isValid: true,
             },
           },
@@ -66,7 +66,7 @@ const UpdateSnap = () => {
 
     try {
       await sendRequest(
-        `https://snap-app-omarsaade.onrender.com/api/snaps/${snapId}`,
+        `${process.env.REACT_APP_BACKEND_URL}/places/${snapId}`,
         "PATCH",
         JSON.stringify({
           title: formState.inputs.title.value,
@@ -77,7 +77,7 @@ const UpdateSnap = () => {
           Authorization: "Bearer " + auth.token,
         }
       );
-      history.push(`/${auth.userId}/snaps`);
+      history.push(`/${auth.userId}/places`);
     } catch (err) {}
   };
 

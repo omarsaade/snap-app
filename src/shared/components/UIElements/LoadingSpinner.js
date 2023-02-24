@@ -1,9 +1,9 @@
-import "./LoadingSpinner.css";
+import './LoadingSpinner.css';
 
 const LoadingSpinner = (props) => {
   return (
-    <div className={`${props.asOverlay && "loading-spinner__overlay"}`}>
-      <div className="lds-dual-ring"></div>
+    <div className={`${props.asOverlay && 'loading-spinner__overlay'}`}>
+      <div className='lds-dual-ring'></div>
     </div>
   );
 };

@@ -30,7 +30,7 @@ const SnapItem = (props) => {
 
     try {
       await sendRequest(
-        `https://snap-app-omarsaade.onrender.com/api/snaps/${props.id}`,
+        `${process.env.REACT_APP_BACKEND_URL}/places/${props.id}`,
         "DELETE",
         null,
         { Authorization: "Bearer " + auth.token }
@@ -85,7 +85,7 @@ const SnapItem = (props) => {
         <li>
           <div className="snap-item__image">
             <img
-              src={`https://snap-app-omarsaade.onrender.com/${props.image}`}
+              src={`${process.env.REACT_APP_ASSET_URL}/${props.image}`}
               // src='http://localhost:8000/uploads/images/5d727aa0-48ca-11ec-96e6-258a17f4d3f7.jpeg'
               alt={props.title}
             />
@@ -97,11 +97,9 @@ const SnapItem = (props) => {
               <p className="snap-item__info-description">{props.description}</p>
             </div>
             <div className="center-flex-row tiny-gap snap-item__actions">
-              <Button onClick={openMapHandler} secondary>
-                View on Map
-              </Button>
+              <Button secondary>View on Map</Button>
               {auth.userId === props.creatorId && (
-                <Button to={`/snaps/${props.id}`} secondary inverse>
+                <Button to={`/places/${props.id}`} secondary inverse>
                   Edit
                 </Button>
               )}

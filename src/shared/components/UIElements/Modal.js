@@ -1,10 +1,10 @@
-import { Fragment } from "react";
-import { createPortal } from "react-dom";
-import { CSSTransition } from "react-transition-group";
+import { Fragment } from 'react';
+import { createPortal } from 'react-dom';
+import { CSSTransition } from 'react-transition-group';
 
-import Backdrop from "./Backdrop";
+import Backdrop from './Backdrop';
 
-import "./Modal.css";
+import './Modal.css';
 
 const ModalOverlay = (props) => {
   const content = (
@@ -26,7 +26,7 @@ const ModalOverlay = (props) => {
       </form>
     </div>
   );
-  return createPortal(content, document.getElementById("modal-hook"));
+  return createPortal(content, document.getElementById('modal-hook'));
 };
 
 const Modal = (props) => {
@@ -36,7 +36,7 @@ const Modal = (props) => {
       <CSSTransition
         in={props.show}
         timeout={300}
-        classNames="modal"
+        classNames='modal'
         mountOnEnter
         unmountOnExit
       >
