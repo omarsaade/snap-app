@@ -142,7 +142,17 @@ const Auth = () => {
               onInput={inputHandler}
             />
           )}
-
+          {!isLoginMode && (
+            <Input
+              element="input"
+              id="motto"
+              type="motto"
+              label="Motto"
+              validators={[VALIDATOR_REQUIRE()]}
+              errorText="Please enter a motto."
+              onInput={inputHandler}
+            />
+          )}
           {!isLoginMode && (
             <p className="authentication-form-text">
               Example: Happiness is Travelling

@@ -15,7 +15,8 @@ import Users from "./user/pages/Users";
 
 import { AuthContext } from "./shared/context/auth-context";
 import { useAuth } from "./shared/hooks/auth-hook";
-
+const RandomSnap = React.lazy(() => import("./snap/pages/RandomSnap"));
+const SearchSnaps = React.lazy(() => import("./snap/pages/SearchSnaps"));
 const Auth = React.lazy(() => import("./user/pages/Auth"));
 const UserSnaps = React.lazy(() => import("./snap/pages/UserSnaps"));
 const NewSnap = React.lazy(() => import("./snap/pages/NewSnap"));
@@ -39,7 +40,7 @@ const App = () => {
           <NewSnap />
         </Route>
         <Route path="/places/:snapId">
-          <UpdateSnap />
+          <UpdateSnap></UpdateSnap>
         </Route>
         <Redirect to="/" />
       </Switch>

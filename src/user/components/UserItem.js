@@ -16,6 +16,7 @@ const UserItem = (props) => {
         </div>
         <div className="user-item__info">
           <p className="user-item__info-name">{props.name}</p>
+          <p className="user-item__info-text">{props.motto}</p>
         </div>
         <Button to={`/${props.id}/places`} secondary>
           {props.snapCount} {props.snapCount === 1 ? "Snap" : "Snaps"}
