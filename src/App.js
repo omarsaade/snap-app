@@ -74,7 +74,7 @@ const App = () => {
         logout: logout,
       }}
     >
-      <Router>
+      <Router basename="/snap-app">
         <MainNavigation />
         <main>
           <Suspense
