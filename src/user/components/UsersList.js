@@ -30,3 +30,18 @@ const UsersList = (props) => {
 };
 
 export default UsersList;
+
+/*
+
+   {props.items.map((item) => (
+          <UserItem
+            key={item.id}
+            id={item.id}
+            name={item.name}
+            motto={item.motto}
+            image={item.image}
+            snapCount={item.places.length}
+          />
+        ))}
+
+*/

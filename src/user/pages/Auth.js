@@ -77,7 +77,7 @@ const Auth = () => {
   const authSubmitHandler = async (event) => {
     event.preventDefault();
 
-    // LOG IN
+    // hon lal log in
     if (isLoginMode) {
       try {
         const responseData = await sendRequest(

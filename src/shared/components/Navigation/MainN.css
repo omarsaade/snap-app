@@ -1,4 +1,4 @@
-.main-navigation__menu-btn {
+.mainNavigationBtn {
   width: 2.4rem;
   height: 2.4rem;
   background: transparent;
@@ -9,24 +9,24 @@
   cursor: pointer;
 }
 
-.main-navigation__menu-btn span {
+.mainNavigationBtn span {
   display: block;
   width: 2.4rem;
   height: 2px;
   background: #333;
 }
 
-.main-navigation__title a:link,
-.main-navigation__title a:visited,
-.main-navigation__title a:hover,
-.main-navigation__title a:active {
+.mainNTitle a:link,
+.mainNTitle a:visited,
+.mainNTitle a:hover,
+.mainNTitle a:active {
   font-size: 2.4rem;
   font-weight: 700;
   text-decoration: none;
   color: #333;
 }
 
-.main-navigation__title svg {
+.mainNTitle svg {
   font-size: 2.4rem;
   color: #333;
 }
@@ -36,7 +36,7 @@
 }
 
 @media (min-width: 768px) {
-  .main-navigation__menu-btn {
+  .mainNavigationBtn {
     display: none;
   }
 }

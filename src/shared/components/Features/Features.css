@@ -1,28 +1,45 @@
-.section-features {
+.sectionFeatures {
   height: 45vh;
   padding: 12.8rem;
 
   position: relative;
 }
 
+/*
+.featureIcon {
+  font-size: 2.4rem;
 
-.feature-icon {
+}
+
+.featureTitle {
+  font-size: 0.8rem;
+  
+  font-weight: 600;
+}
+
+.featureText {
+  font-size: 0.4rem;
+
+}
+
+*/
+.featureIcon {
   font-size: 4.4rem;
   color: #333;
 }
 
-.feature-title {
+.featureTitle {
   font-size: 1.8rem;
   color: #333;
   font-weight: 600;
 }
 
-.feature-text {
+.featureText {
   font-size: 1.4rem;
   color: #555;
 }
 
-.scroll-down {
+.scrollDown {
   position: absolute;
   top: 100%;
   left: 50%;
@@ -30,13 +47,13 @@
   transform: translate(-50%, -100%);
 }
 
-.scroll-down svg {
+.scrollDown svg {
   font-size: 2.4rem;
   color: #767676;
 }
 
 @media (max-width: 64em) {
-  .section-features {
+  .sectionFeatures {
     padding: 11.2rem;
 
     gap: 4.8rem;
@@ -44,7 +61,7 @@
 }
 
 @media (max-width: 48em) {
-  .section-features {
+  .sectionFeatures {
     padding: 8rem 6.4rem;
 
     display: grid;
@@ -53,7 +70,7 @@
     row-gap: 6.4rem;
   }
 
-  .scroll-down {
+  .scrollDown {
     display: none;
   }
 }

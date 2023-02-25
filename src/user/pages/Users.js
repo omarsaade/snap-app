@@ -2,7 +2,7 @@ import { Fragment, useState, useEffect } from "react";
 import Hero from "../../shared/components/Hero/Hero";
 import Features from "../../shared/components/Features/Features";
 import UsersList from "../components/UsersList";
-import CallToAction from "../../shared/components/CallToAction/CallToAction";
+import Action from "../../shared/components/Action/Action";
 import ErrorModal from "../../shared/components/UIElements/ErrorModal";
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
 
@@ -36,7 +36,7 @@ const Users = () => {
         </div>
       )}
       {!isLoading && loadedUsers && <UsersList items={loadedUsers} />}
-      <CallToAction />
+      <Action />
     </Fragment>
   );
 };

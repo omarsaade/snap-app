@@ -3,18 +3,24 @@ import { useContext } from "react";
 import Button from "../FormElements/Button";
 import { AuthContext } from "../../context/auth-context";
 
-import "./CallToAction.css";
+import "./Action.css";
 
-const CallToAction = () => {
+const Action = () => {
   const auth = useContext(AuthContext);
 
   if (auth.isLoggedIn) {
     return null;
   }
+  /*
+else {
+  return;
+}
 
+*/
   return (
-    <div className="CTA-section center-flex-column extra-small-gap">
-      <p className="CTA-section--text">Join us. Start your journey here.</p>
+    <div className="aSection centerFC extra-small-gap">
+      {/* Join us. Start your journey . */}
+      <p className="aSectiontext">Join us. Start your journey here.</p>
       <Button to="/auth" type="button" size="medium" primary inverse>
         Get Started
       </Button>
@@ -22,4 +28,4 @@ const CallToAction = () => {
   );
 };
 
-export default CallToAction;
+export default Action;

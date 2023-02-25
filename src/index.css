@@ -25,6 +25,25 @@ body {
   background: #fafafa;
 }
 
+
+/*
+@media (max-width: 42em) {
+  html {
+    font-size: 56%;
+  }
+}
+
+@media (max-width: 20em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+
+
+*/
+
+
 @media (max-width: 48em) {
   html {
     font-size: 56.25%;
@@ -47,7 +66,7 @@ body {
   align-items: center;
 }
 
-.center-flex-column {
+.centerFC {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -61,7 +80,7 @@ body {
   color: #333;
 }
 
-.tiny-gap {
+.tg {
   gap: 0.8rem;
 }
 .extra-small-gap {

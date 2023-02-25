@@ -6,7 +6,7 @@ import {
   Switch,
 } from "react-router-dom";
 
-import MainNavigation from "./shared/components/Navigation/MainNavigation";
+import MainN from "./shared/components/Navigation/MainN";
 import Footer from "./shared/components/Footer/Footer";
 
 import LoadingSpinner from "./shared/components/UIElements/LoadingSpinner";
@@ -14,9 +14,21 @@ import LoadingSpinner from "./shared/components/UIElements/LoadingSpinner";
 import Users from "./user/pages/Users";
 
 import { AuthContext } from "./shared/context/auth-context";
+
 import { useAuth } from "./shared/hooks/auth-hook";
-const RandomSnap = React.lazy(() => import("./snap/pages/RandomSnap"));
-const SearchSnaps = React.lazy(() => import("./snap/pages/SearchSnaps"));
+
+/*
+import Auth from "./user/pages/Auth";
+import UserSnaps from "./snap/pages/UserSnaps";
+
+import NewSnap from "./snap/pages/NewSnap";
+
+Lazy-Laod : It is a new function in react that lets you load 
+
+react components lazily through code splitting 
+without help from any additional   libraries
+*/
+
 const Auth = React.lazy(() => import("./user/pages/Auth"));
 const UserSnaps = React.lazy(() => import("./snap/pages/UserSnaps"));
 const NewSnap = React.lazy(() => import("./snap/pages/NewSnap"));
@@ -26,7 +38,7 @@ const App = () => {
   const { token, login, logout, userId } = useAuth();
 
   let routes;
-
+  // react router v5 => update to v6
   if (token) {
     routes = (
       <Switch>
@@ -75,7 +87,7 @@ const App = () => {
       }}
     >
       <Router basename="/snap-app">
-        <MainNavigation />
+        <MainN />
         <main>
           <Suspense
             fallback={
@@ -107,7 +119,7 @@ import Users from "./user/pages/Users";
 import NewPlace from "./places/pages/NewPlace";
 import UserPlaces from "./places/pages/UserPlaces";
 import UpdatePlace from "./places/pages/UpdatePlace";
-import MainNavigation from "./shared/components/Navigation/MainNavigation";
+import MainN from "./shared/components/Navigation/MainN";
 import Auth from "./user/pages/Auth";
 import { AuthContext } from "./shared/context/auth-context";
 import { useAuth } from "./shared/hooks/auth-hook";
@@ -142,7 +154,7 @@ const App = () => {
         logout: logout,
       }}
     >
-      <MainNavigation />
+      <MainN />
       <main>
         <Routes>{routes}</Routes>
       </main>

@@ -36,21 +36,21 @@
   border-color: #333;
 }
 
-.button--white-bg {
+.btnwhite {
   background: #fff;
 }
 
-.button--inverse:hover,
-.button--inverse:active,
-.button--inverse:focus {
+.bti:hover,
+.bti:active,
+.bti:focus {
   color: #fff;
   background: #636e72;
   border-color: #636e72;
 }
 
-.button--danger:hover,
-.button--danger:active,
-.button--danger:focus {
+.btdanger:hover,
+.btdanger:active,
+.btdanger:focus {
   color: #fff;
   background: #ff7675;
   border-color: #ff7675;

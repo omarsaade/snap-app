@@ -56,7 +56,7 @@ const UserSnaps = () => {
         </div>
       )}
       {!isLoading && loadedUser && (
-        <div className="user-info center-flex-column extra-small-gap">
+        <div className="user-info centerFC extra-small-gap">
           <div className="user-info__image">
             <Avatar
               image={`${process.env.REACT_APP_ASSET_URL}/${loadedUser.image}`}

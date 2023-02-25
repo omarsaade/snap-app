@@ -16,8 +16,12 @@ const SnapItem = (props) => {
   const auth = useContext(AuthContext);
   const [showMap, setShowMap] = useState(false);
   const [showConfirmModal, setShowConfirmModal] = useState(false);
+  /*
 
-  const openMapHandler = () => setShowMap(true);
+ const { isLoading, error, sendRequest, clearError } = useHttpClient();
+
+*/
+  // const openMapHandler = () => setShowMap(true);
   const closeMapHandler = () => setShowMap(false);
   const showDeleteWarningHandler = () => {
     setShowConfirmModal(true);
@@ -46,8 +50,8 @@ const SnapItem = (props) => {
         show={showMap}
         onCancel={closeMapHandler}
         header={props.address}
-        contentClass="snap-item__modal-content"
-        footerClass="snap-item__modal-actions"
+        contentClass="snapItemModalContent"
+        footerClass="snapItemModalActions"
         footer={
           <Button onClick={closeMapHandler} secondary>
             Close
@@ -62,8 +66,8 @@ const SnapItem = (props) => {
         show={showConfirmModal}
         onCancel={cancelDeleteHandler}
         header="Are you sure?"
-        contentClass="snap-item__modal-content"
-        footerClass="snap-item__modal-actions"
+        contentClass="snapItemModalContent"
+        footerClass="snapItemModalActions"
         footer={
           <Fragment>
             <Button onClick={cancelDeleteHandler} inverse secondary>
@@ -80,23 +84,23 @@ const SnapItem = (props) => {
           action.
         </p>
       </Modal>
-      <Card className="snap-item">
+      <Card className="snapItem">
         {isLoading && <LoadingSpinner asOverlay />}
         <li>
-          <div className="snap-item__image">
+          <div className="snapItemImg">
             <img
               src={`${process.env.REACT_APP_ASSET_URL}/${props.image}`}
               // src='http://localhost:8000/uploads/images/5d727aa0-48ca-11ec-96e6-258a17f4d3f7.jpeg'
               alt={props.title}
             />
           </div>
-          <div className="center-flex-column small-gap">
-            <div className="center-flex-column extra-small-gap snap-item__info">
-              <p className="snap-item__info-title">{props.title}</p>
-              <p className="snap-item__info-address">{props.address}</p>
-              <p className="snap-item__info-description">{props.description}</p>
+          <div className="centerFC small-gap">
+            <div className="centerFC extra-small-gap snapItem__info">
+              <p className="snapItem__info-title">{props.title}</p>
+              <p className="snapItem__info-address">{props.address}</p>
+              <p className="snapItem__info-description">{props.description}</p>
             </div>
-            <div className="center-flex-row tiny-gap snap-item__actions">
+            <div className="center-flex-row tg snapItem__actions">
               <Button secondary>View on Map</Button>
               {auth.userId === props.creatorId && (
                 <Button to={`/places/${props.id}`} secondary inverse>

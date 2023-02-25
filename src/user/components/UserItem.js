@@ -6,17 +6,18 @@ import "./UserItem.css";
 
 const UserItem = (props) => {
   return (
-    <Card className="user-item">
-      <li className="center-flex-column medium-gap">
-        <div className="user-item__image">
+    <Card className="userItem">
+      <li className="centerFC medium-gap">
+        {/* <li className="centerFC medium-gap"> */}
+        <div className="userItem__image">
           <Avatar
             image={`${process.env.REACT_APP_ASSET_URL}/${props.image}`}
             alt={props.name}
           />
         </div>
-        <div className="user-item__info">
-          <p className="user-item__info-name">{props.name}</p>
-          <p className="user-item__info-text">{props.motto}</p>
+        <div className="userItem__info">
+          <p className="userItemInfoName">{props.name}</p>
+          <p className="userInfoText">{props.motto}</p>
         </div>
         <Button to={`/${props.id}/places`} secondary>
           {props.snapCount} {props.snapCount === 1 ? "Snap" : "Snaps"}

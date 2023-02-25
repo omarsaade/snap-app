@@ -23,34 +23,8 @@
 //   }
 // };
 
-// const SearchBar = (props) => {
-//   const [inputState, dispatch] = useReducer(inputReducer, {
-//     value: '',
-//     isTouched: false,
-//     isValid: false,
-//   });
-
-//   const { onSearch } = props;
-//   const { value } = inputState;
-
-//   useEffect(() => {
-//     onSearch(value);
-//   }, [value, onSearch]);
-
-//   const changeHandler = (event) => {
-//     dispatch({
-//       type: 'CHANGE',
-//       val: event.target.value,
-//       validators: props.validators,
-//     });
-//   };
-
-//   const touchHandler = () => {
-//     dispatch({ type: 'TOUCH' });
-//   };
-
 //   return (
-//     <div className='search-bar center-flex-row tiny-gap'>
+//     <div className='search-bar center-flex-row tg'>
 //       <label htmlFor='search' className='search-bar-label'>
 //         Search
 //       </label>
