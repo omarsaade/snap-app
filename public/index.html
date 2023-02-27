@@ -10,6 +10,7 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
     <meta
       name="description"
       content="Snap is a photo sharing platform for people who love architecture. Share your favorite snap. Find where it is. Get inspired. Plan a visit. Explore it now!"
@@ -34,22 +35,22 @@
    -->
     <script type="text/javascript">
      
-      // (function (l) {
-      //   if (l.search[1] === '/') {
-      //     var decoded = l.search
-      //       .slice(1)
-      //       .split('&')
-      //       .map(function (s) {
-      //         return s.replace(/~and~/g, '&');
-      //       })
-      //       .join('?');
-      //     window.history.replaceState(
-      //       null,
-      //       null,
-      //       l.pathname.slice(0, -1) + decoded + l.hash
-      //     );
-      //   }
-      // })(window.location);
+      (function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search
+            .slice(1)
+            .split('&')
+            .map(function (s) {
+              return s.replace(/~and~/g, '&');
+            })
+            .join('?');
+          window.history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      })(window.location);
     </script>
     <!-- End Single Page Apps for GitHub Pages -->
   </head>
