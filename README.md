@@ -116,8 +116,7 @@ Licensed under the [MIT License](LICENSE)
 <!-- BADGES/SHIELDS REFERENCE -->
 <!-- Site Related -->
 
-[site-screenshot]: assets/site-screenshot.webp
-[demo-url]: https://howiework.github.io/snap-app/
+
 
 
 
