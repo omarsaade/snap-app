@@ -49,3 +49,76 @@
 ![Screenshot (182)](https://user-images.githubusercontent.com/49005530/221260937-74214dc9-b134-492e-9a64-b0aa05fcf496.png)
 ![Screenshot (183)](https://user-images.githubusercontent.com/49005530/221260993-650e936e-bd04-4cd7-bb25-4b6ff3af9c15.png)
 ![Screenshot (184)](https://user-images.githubusercontent.com/49005530/221261040-c3b6a528-0ae8-4c41-abae-6b14e1b28cd2.png)
+
+
+<!-- ----------------------------------------- -->
+
+## Roadmap
+
+- [x] Frontend
+
+  - [x] Ideation
+  - [x] Wireframing
+  - [x] Design system
+  - [x] Prototyping
+  - [x] Build Structure: Pages & Routes (v5)
+  - [x] Build React Components
+  - [x] Add Google Maps - Mapbox - LocationIQ
+  - [x] Add Authorization
+
+- [x] Backend
+
+  - [x] Build a REST API
+  - [x] Create Database
+  - [x] Connect React to Backend
+  - [x] Add file upload
+  - [x] Add Authentication and Authorization
+
+- [x] Deployment
+  - [x] Set up Environment variables for both FE & BE
+  - [x] API keys & credentials
+  - [x] Deploy REST API
+  - [x] Deploy React SPA
+
+**UPDATES:**
+
+- [x] 11/12/2022: RE-deploy REST API using [Render](https://render.com/); Also some minor fix:
+  - [x] Add unsupported routes error handling in backend
+  - [x] Fix footer: year
+  - [x] Update config files relating new REST API host
+
+<p align="right"><a href="#top">Back to Top ↑</a></p>
+
+<!-- ----------------------------------------- -->
+
+## Contributors
+
+- Omar Saade <omarsaadeh11@gmail.com>
+
+<!-- ----------------------------------------- -->
+
+## License & copyright
+
+© Omar Saade
+
+Licensed
+
+<!-- ----------------------------------------- -->
+
+## Contact
+
+- Omar Saade <omarsaadeh11@gmail.com>
+
+<p align="right"><a href="#top">Back to Top ↑</a></p>
+
+<!-- ----------------------------------------- -->
+
+<!-- BADGES/SHIELDS REFERENCE -->
+<!-- Site Related -->
+
+
+
+
+
+
+
