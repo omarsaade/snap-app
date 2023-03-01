@@ -96,7 +96,7 @@ const NewSnap = () => {
             id="address"
             element="input"
             label="Address"
-            placeholder="This is a placeholder for Address"
+            placeholder=" Please provide a complete and accurate address. Random letters or words will not work!"
             validators={[VALIDATOR_REQUIRE()]}
             errorText="Please enter a valid address."
             onInput={inputHandler}

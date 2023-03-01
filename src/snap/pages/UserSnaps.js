@@ -47,9 +47,14 @@ const UserSnaps = () => {
     );
   };
 
+  let nat = userId == 123 || userId == 124 || userId == 125 ? true : false;
+
   return (
     <Fragment>
       <ErrorModal error={error} onClear={clearError} />
+      {nat && (
+        <div className="center-text no-data-found">No Snaps Available</div>
+      )}
       {isLoading && (
         <div className="">
           <LoadingSpinner />
