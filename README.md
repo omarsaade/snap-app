@@ -101,13 +101,13 @@
 
 © Omar Saade
 
-Licensed under the [MIT License](LICENSE)
+Licensed
 
 <!-- ----------------------------------------- -->
 
 ## Contact
 
-- Howie Wang <omarsaadeh11@gmail.com>
+- Omar Saade <omarsaadeh11@gmail.com>
 
 <p align="right"><a href="#top">Back to Top ↑</a></p>
 
