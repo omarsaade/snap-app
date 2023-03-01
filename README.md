@@ -93,7 +93,7 @@
 
 ## Contributors
 
-- Omar Saade <omarsasdeh11@gmail.com>
+- Omar Saade <omarsaadeh11@gmail.com>
 
 <!-- ----------------------------------------- -->
 
